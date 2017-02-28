@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.banner {
+    position: relative;
+    overflow: auto;
+    text-align: center;
+}
+
+.banner li {
+    list-style: none;
+    float: left;
+}
+
+#b01 {
+    width: 640px;
+    height: 400px;
+    overflow: hidden;
+    margin: 60px auto;
+}
+
+#b01 .dots {
+    position: absolute;
+    left:40%;
+    bottom: 20px;
+}
+
+#b01 .dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+
+#b01 .dots li.active {
+    background: #ffffff;
+    opacity: 1;
+}
+#b01 .arrow{
+    position: absolute;
+    top:200px;
+}
+#b01 #al{
+    left:15px;
+}
+#b01 #ar{
+    right:15px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>焦点广告轮播图</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="unslider.min.js"></script>
+    <link rel="stylesheet" href="lunbotu.css">
+</head>
+<body>
+    <div class="banner" id="b01">
+        <ul>
+            <li><img src="img/img1.jpg" alt="#" width="100%" height="480" class="sliderImg"></li>
+            <li><img src="img/img2.jpg" alt="#" width="100%" height="480" class="sliderImg"></li>
+            <li><img src="img/img3.jpg" alt="#" width="100%" height="480" class="sliderImg"></li>
+            <li><img src="img/img4.jpg" alt="#" width="100%" height="480" class="sliderImg"></li>
+            <li><img src="img/img5.jpg" alt="#" width="100%" height="480" class="sliderImg"></li>
+        </ul>
+        <a href="javascript:void(0);" class="unslider-arrow01 prev">
+            <img src="img/arrowl.png" class="arrow" id="al" alt="prev" width="20" height="36">
+        </a>
+        <a href="javascript:void(0);" class="unslider-arrow01 next">
+            <img src="img/arrowr.png" class="arrow" id="ar" alt="prev" width="20" height="36">
+        </a>
+    </div>
+</body>
+
+<script>
+    function imgLoad(){
+        var bodyWidth=$('body').width();
+        $('#b01 ul li').each(function(){
+            $(this).css({width:bodyWidth+'px'});
+        });
+        $('.sliderImg').each(function(){
+            $(this).css({width:bodyWidth+'px'});
+        });
+    }
+    $(window).resize(function(){
+        imgLoad();
+    });
+
+    $(document).ready(function (e) {
+        imgLoad();
+        var unslider1=$('#b01').unslider({
+            dots:true,  //是否显示指示器
+            fluid:true, //是否支持响应式布局
+            keys:true,//是否支持键盘操作
+            speed:900,//图片切换速度
+            delay:4000 //图片停留时间
+            }),
+            data1=unslider1.data('unslider');
+        $('.unslider-arrow01').click(function(){
+            var fn=this.className.split(' ')[1];
+            data1[fn]();
+        });
+    });
+</script>
+</html>
